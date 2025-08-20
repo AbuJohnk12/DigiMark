@@ -18,6 +18,12 @@ import pandas as pd
 import streamlit as st
 import joblib
 from dotenv import load_dotenv
+from openai import OpenAI
+import streamlit as st
+import os
+
+api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=api_key)
 
 # -------------------- Env / Keys --------------------
 load_dotenv()
